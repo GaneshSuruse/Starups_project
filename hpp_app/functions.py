@@ -35,6 +35,15 @@ def get_location_names():
         locations = data_columns[3:]  
     return locations 
 
+def get_location_names():
+    print(config.COLUMN_NAMES_JSON_PATH)
+    with open(config.COLUMN_NAMES_JSON_PATH, 'r') as f: 
+        data_columns_dict = json.load(f) # dict 
+        data_columns = data_columns_dict['Columns'] 
+        locations = data_columns[3:]  
+    return locations 
+
+
 def get_data_columns():
     with open(config.COLUMN_NAMES_JSON_PATH, "r") as f:
         data_columns = json.load(f)['Columns']
