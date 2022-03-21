@@ -74,8 +74,10 @@ def predict_home_price():
         bath = int(user_data['bath'])
         location = user_data['loc']
         print('location,total_sqft,bhk,bath',location,total_sqft,bhk,bath)
+
         prediction = functions.get_predicted_house_price(total_sqft,bath,bhk,location)
         print("::::::::::::::::::::::::::::::::::::",prediction)
+
         # return render_template('home.html', prediction_text = f"The Predicted house price is Rs. {prediction} lakhs")
         return jsonify({'price':prediction})
 
